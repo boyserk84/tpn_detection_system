@@ -60,13 +60,13 @@ How to setup Tessel development environment
 
 Prepare to run:
 ---------------
-Client App (aka index.html)
+Client App (aka *index.html*)
 - Make sure to define your PUBNUB subscription and publish keys.
 
-Tessel Hardware code (aka hack.js)
+Tessel Hardware code (aka *hack.js*)
 - Make sure to define your PUBNUB subscription and publish keys.
-- GPS_PORT and AMBIENT_PORT default ports are 'C' and 'A' respectively. If you change/switch the port, you will need to change this defined constants.
-- (Optional) by setting a constant PS_CONNECT = true;, you will enable GPS module. By default, GPS is turned off.
+- *GPS_PORT* and *AMBIENT_PORT* default ports are 'C' and 'A' respectively. If you change/switch the port, you will need to change this defined constants.
+- (Optional) by setting a constant *GPS_CONNECT* = true;, you will enable GPS module. By default, GPS is turned off.
 
 
 Run the following commands:
