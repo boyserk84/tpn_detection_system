@@ -1,27 +1,27 @@
-PubNub and Tessel integration (hackathon) project.
+h1 PubNub and Tessel integration (hackathon) project.
 
-*Security Detection IOT System
+h2 Security Detection IOT System
 
-Overview:
+h3 Overview:
 - This contains a basic framework for informing clients of any unusual sound and light pattern in the environment.
 
-Example of applications:
+h3 Example of applications:
 - This could be used for detecting if intruders/someone enter a room/classified area. 
 - Attached to any subject and alert client apps of any change in sound/light environment.
 
-How it works:
+h3 How it works:
 - Tessel hardware is equipped with Ambient and GPS modules. Everytime there is any unusual sound/light value occurred
 (i.e. sudden loud sound or sudden change in light), it will broadcast this information via PubNub Channel.
 Any client app (i.e. Mobile App or Desktop web app) will receive this information in real-time and can determine
 what to do.
 
-Current iteration (10/25/2014)
+h3 Current iteration (10/25/2014)
 - Notifying client app (Desktop web app) when there is a sudden loud/change in the sound environment where Tessel is located.
 - After 5 triggers, Client will send a command to Tessel hardware to execute a security protocol (in this example, blinking LED lights).
 - Every time there is a new message/command from the client for Tessel hardware. It will blink its LED lights.
 
 
-Requirement:
+h3 Requirement:
 - Tessel hardware	(Installation guide: http://start.tessel.io/install)
 	- Ambient Module
 	- GPS Module (Optional)
@@ -30,7 +30,7 @@ Requirement:
 - Stable Wifi internet connection for Tessel
 
 
-How to setup Tessel development environment
+h3 How to setup Tessel development environment
 - Make sure to connect modules to the correct Tessel ports. There are 4 ports (A,B,C, and D) in Tessel hardware. (see start.tessel.io/modules)
 - Make sure to install Tessel driver, please follow this guide http://start.tessel.io/install
 - Make sure to install node.js command line
@@ -38,7 +38,8 @@ How to setup Tessel development environment
 - Open a command line (If windows, open it via node.js command line)
 
 
-Run the following commands:
+h4 Run the following commands:
+
 1.) brew install node	(Skip this, if you've already install node.js)
 
 2.) npm install -g tessel	// Install Tessel driver
