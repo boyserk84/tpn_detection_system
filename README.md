@@ -11,6 +11,14 @@ Overview:
 - This contains a basic framework for informing clients of any unusual sound and light pattern in the environment.
 - This is fully integrated with PubNub and Tessel. Basic functionality should be there for you to build anything on top of it.
 
+Why use this?
+-------------
+- Detect if Tessel has connected to internet.
+- Safety check for preventing EmitterEvent memory leak before Tessel is running. (see tips & tricks for why )
+- Already integrated with Ambient and GPS modules
+- Already integrated with PubNub for Ambient (sound) module.
+- Client Web App can display realtime message from Tessel via PubNub.
+
 Example of applications
 -------------------------
 - This could be used for detecting if intruders/someone enter a room/classified area. 
