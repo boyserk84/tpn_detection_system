@@ -1,12 +1,13 @@
-Security Detection IOT System with Tessel and PubNub
+IOT: Security Detection System with Tessel and PubNub
 =====================================================
 This work is the result of PubNub/Tessel Hackathon on 10/25/2014 in SF.
-Feel free to use this piece code in anyway you like. However, use it as your own risk.
-No guarantee is provided. 
+Feel free to use this piece of code in anyway you would like. 
+However, use it as your own risk. No guarantee is provided. 
 
 Overview:
 ------------
 - This contains a basic framework for informing clients of any unusual sound and light pattern in the environment.
+- This is fully integrated with PubNub and Tessel. Basic functionality should be there for you to build anything on top of it.
 
 Example of applications
 -------------------------
@@ -26,10 +27,12 @@ Current iteration (10/25/2014)
 - After 5 triggers, Client will send a command to Tessel hardware to execute a security protocol (in this example, blinking LED lights).
 - Every time there is a new message/command from the client for Tessel hardware. It will blink its LED lights.
 
+
 Future or possible iteration
-----------------------------
+-----------------------------
 - Client App on mobile platform (Android/iOS) and be able to receive and send a command from/to Tessel via PubNub.
-- 
+- Send back GPS's coordinates information and display a location on Google Map on Client Web/mobile apps whenever security protocol is triggered.
+
 
 Requirements:
 ------------
@@ -92,7 +95,7 @@ npm install gps-a2235h
 tessel wifi -n [WIFI_NETWORK_NAME] -p [WIFI_PASSWORD]
 ```
 
-7.) Deploying the example code to Tessel hardware
+7.) Deploying and execute the example code to Tessel hardware
 ```sh
 tessel run [YOUR_TESSEL_JS_FILE]
 ```
@@ -100,6 +103,14 @@ In this example,
 ```sh
 tessel run hack.js
 ```
+You should get the following screenshot or something similar
+![Alt text](screenshot1.PNG)
+
+8.) Now the client app, just hit the page "index.html" on Google Chrome or any browser.
+
+9.) Try clapping or shining a flashlight at Ambient module. If you see the following screenshot or something similar
+then congratulation your client app is working. 
+![Alt text](screenshot2.PNG)
 
 More information: http://www.pubnub.com/blog/tessel-pubnub-power-internet-of-things-4-lines-javascript/
 
