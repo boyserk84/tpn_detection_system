@@ -58,8 +58,8 @@ How to setup Tessel development environment
 - Connect your Tessel via USB port to your computer.
 - Open a command line (If windows, open it via node.js command line)
 
-Before running a command:
--------------------------
+Prepare to run:
+---------------
 Client App (aka index.html)
 - Make sure to define your PUBNUB subscription and publish keys.
 
