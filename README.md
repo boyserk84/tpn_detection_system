@@ -138,5 +138,5 @@ Author and contributors:
 
 Thanks to
 ----------
-PubNub/Tessel Hackathon for providing Tessel and modules for playing with and supports.
-The SF Javascript Meetup Group
+- PubNub/Tessel Hackathon event on 10/25/2014 for providing Tessel and modules for playing with and supports.
+- [The SF Javascript Meetup Group](http://www.meetup.com/jsmeetup/)
