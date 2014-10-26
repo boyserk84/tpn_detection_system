@@ -132,10 +132,9 @@ then congratulation your client app is working.
 
 More information: http://www.pubnub.com/blog/tessel-pubnub-power-internet-of-things-4-lines-javascript/
 
-Author and contrbutors:
------------------------
+Author and contributors:
+-------------------------
 [Nate Kemavaha](https://github.com/boyserk84)
-me@nateserk.com 
 
 Thanks to
 ----------
