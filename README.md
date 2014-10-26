@@ -4,6 +4,8 @@ This work is the result of PubNub/Tessel Hackathon on 10/25/2014 in SF.
 Feel free to use this piece of code in anyway you would like. 
 However, use it as your own risk. No guarantee is provided. 
 
+![Alt text](http://www.pubnub.com/blog/wp-content/uploads/2014/09/TesselInternetOfThings.png)
+
 Overview:
 ------------
 - This contains a basic framework for informing clients of any unusual sound and light pattern in the environment.
