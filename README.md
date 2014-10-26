@@ -1,8 +1,8 @@
-PubNub and Tessel integration (hackathon) project.
-===================================================
-
-Security Detection IOT System
-=============================
+Security Detection IOT System with Tessel and PubNub
+=====================================================
+This work is the result of PubNub/Tessel Hackathon on 10/25/2014 in SF.
+Feel free to use this piece code in anyway you like. However, use it as your own risk.
+No guarantee is provided. 
 
 Overview:
 ------------
@@ -26,8 +26,12 @@ Current iteration (10/25/2014)
 - After 5 triggers, Client will send a command to Tessel hardware to execute a security protocol (in this example, blinking LED lights).
 - Every time there is a new message/command from the client for Tessel hardware. It will blink its LED lights.
 
+Future or possible iteration
+----------------------------
+- Client App on mobile platform (Android/iOS) and be able to receive and send a command from/to Tessel via PubNub.
+- 
 
-Requirement:
+Requirements:
 ------------
 - Tessel hardware	(Installation guide: http://start.tessel.io/install)
 	- Ambient Module
@@ -39,10 +43,10 @@ Requirement:
 
 How to setup Tessel development environment
 --------------------------------------------
-- Make sure to connect modules to the correct Tessel ports. There are 4 ports (A,B,C, and D) in Tessel hardware. (see start.tessel.io/modules)
+- Make sure to connect modules to the correct Tessel ports. There are 4 ports (A,B,C, and D) in Tessel hardware. (see http://start.tessel.io/modules)
 - Make sure to install Tessel driver, please follow this guide http://start.tessel.io/install
 - Make sure to install node.js command line
-- Connect your Tessel via USB port
+- Connect your Tessel via USB port to your computer.
 - Open a command line (If windows, open it via node.js command line)
 
 
@@ -74,6 +78,7 @@ npm install pubnub-hackathon.
 ```
 
 5.) Install module drivers/dependencies
+
 Ambient Module: 
 ```sh
 npm install ambient-attx4
