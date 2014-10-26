@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Tessel and PubNubHack </title>
+	<script src="http://cdn.pubnub.com/pubnub.min.js" type="text/javascript"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js" type="text/javascript"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+	<script>
+		$( document ).ready(function() {
+			var count = 0;
+			var MAX_THRESHOLD = 5;			// Max, before start triggering a security protocol
+			var PUB_KEY = '<YOUR_PUB_KEY_HERE>';	// PubNub Publish Key
+			var SUB_KEY = '<YOUR_SUB_KEY_HERE>';	// PubNub Subscription key
+			var PUBNUB_CHANNEL = "tessel-light";
+			var TESSEL_REPORT = "tessel-report";
+			var pubnub = PUBNUB.init({
+				publish_key: PUB_KEY,
+				subscribe_key: SUB_KEY 
+			});
+			
+			// Listen for Tessel hardware via PubNub
+			pubnub.subscribe(
+				{ 
+					channel: PUBNUB_CHANNEL, 
+					message: function(response) {
+						console.log(response);
+						
+						if ( response.command == TESSEL_REPORT) {
+							console.log( "Getting command " + response.command );
+							count++;
+							
+							// Show the warning to the client when we receive an alert from Tessel Hardware
+							// via PubNub Channel
+							if ( count <= MAX_THRESHOLD ) {
+								$("#onlineContainer").append( "<div class=\"alert alert-danger\">Alert Intruder!</div>" );
+							} else {
+								// Above the threshold,
+								// Tell Tessel to execute a security protocol.
+								pubnub.publish({
+									channel: PUBNUB_CHANNEL,
+									message: {
+										command: "kill"
+									}
+								});
+								$("#onlineContainer").append("<div class=\"alert alert-success\">Eliminate target!</div>");
+							}
+						}
+					}
+				}
+			
+			);
+			
+			// Debug Message for notifying all parties including Tessel hardware that this client is online.
+			pubnub.publish(
+				{
+					channel: PUBNUB_CHANNEL,
+					message: { text: "Hey it is me!" }
+				}
+			)
+		});
+	
+	</script>
+</head>
+   <body>
+		<div id="main_wrapper">
+			<div class="container theme-showcase" role="main">
+			<ul class="nav nav-pills">
+				<li>
+					<a href="#">Tessel and PubNub Security Detection Hack Test</a>
+				</li>
+			</ul>
+			<div class="page-header">
+				<h1>RealTime notification for Client</h1>
+			</div>
+			<div id="wrapper">
+				<ul class="nav nav-pills" id="onlineContainer">
+					
+				</ul>
+			</div>
+		</div>		
+   </body>
+</html>
