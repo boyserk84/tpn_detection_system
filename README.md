@@ -16,10 +16,13 @@ Example of applications
 
 How it works:
 -------------
-- Tessel hardware is equipped with Ambient and GPS modules. Everytime there is any unusual sound/light value occurred
+- Tessel hardware (for this work) is equipped with Ambient and GPS modules. Everytime there is any unusual sound/light value occurred
 (i.e. sudden loud sound or sudden change in light), it will broadcast this information via PubNub Channel.
 Any client app (i.e. Mobile App or Desktop web app) will receive this information in real-time and can determine
-what to do.
+what to do. 
+
+For this particular work/example, after the client app receives 5+ notifications of an usual sound activity in the environment, 
+the client app will send a command via PubNub, telling Tessel to blink LED light.
 
 Current iteration (10/25/2014)
 ------------------------------
@@ -40,8 +43,11 @@ Requirements:
 	- Ambient Module
 	- GPS Module (Optional)
 - PubNub account: It's FREE! (http://www.pubnub.com/)
+	- Publish key
+	- Subscription key
 - Node.js command line (http://www.nodejs.org)
 - Stable Wifi internet connection for Tessel
+- index.html and hack.js from this repository.
 
 
 How to setup Tessel development environment
@@ -51,6 +57,16 @@ How to setup Tessel development environment
 - Make sure to install node.js command line
 - Connect your Tessel via USB port to your computer.
 - Open a command line (If windows, open it via node.js command line)
+
+Before running a command:
+-------------------------
+Client App (aka index.html)
+- Make sure to define your PUBNUB subscription and publish keys.
+
+Tessel Hardware code (aka hack.js)
+- Make sure to define your PUBNUB subscription and publish keys.
+- GPS_PORT and AMBIENT_PORT default ports are 'C' and 'A' respectively. If you change/switch the port, you will need to change this defined constants.
+- (Optional) by setting a constant PS_CONNECT = true;, you will enable GPS module. By default, GPS is turned off.
 
 
 Run the following commands:
