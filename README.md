@@ -51,13 +51,15 @@ Requirements:
 ------------
 - Tessel hardware	(Installation guide: http://start.tessel.io/install)
 	- Ambient Module
+	![Alt text](https://s3.amazonaws.com/technicalmachine-assets/product+pics/2014+05+15+production+modules/ambient.jpg)
 	- GPS Module (Optional)
+	![Alt text](https://s3.amazonaws.com/technicalmachine-assets/product+pics/2014+05+15+production+modules/gps.jpg)
 - PubNub account: It's FREE! (http://www.pubnub.com/)
 	- Publish key
 	- Subscription key
 - Node.js command line (http://www.nodejs.org)
 - Stable Wifi internet connection for Tessel
-- index.html and hack.js from this repository.
+- *index.html* and *hack.js* from this repository.
 
 
 How to setup Tessel development environment
