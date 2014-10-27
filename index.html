@@ -1,3 +1,18 @@
+<!--
+Index.html (Client Web App)
+
+This requires jquery, pubnub and bootstrap. 
+10/25/2014 - Use for PubNub/Tessel Hackathon.
+
+Summary:
+This client is basically subscribing to PubNub Channel and waiting for data from Tessel hardware.
+For example, where there is a sudden change in Ambient sensor, Tessel will dispatch a message to PubNub and
+broadcast it to this client. Also, the client can send back command/message to Tessel.
+In this example, client app will send back 'kill' command, which is basically to trigger a security protocol 
+on Tessel hardware (in this particular example, blinking LED light).
+
+@author nkemavaha (Nate K)
+-->
 <html>
 <head>
 	<title>Tessel and PubNubHack </title>
